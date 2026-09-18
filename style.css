@@ -1,0 +1,43 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: darkblue;
+}
+
+img {
+    width: 200px;
+}
+
+.judul_section {
+    color: green;
+    text-decoration: underline;
+}
+
+#perkenalan {
+    font-weight: bold;
+    font-style: italic;
+    padding: 15px;
+    border: 2px solid darkblue;
+    margin: 20px 0;
+}
+
+ul {display: flex; 
+    gap: 15px; 
+    list-style: none; 
+    padding: 0;
+}
+
+.grid-container {
+display: grid; 
+grid-template-columns: repeat(2, 1fr); 
+gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
