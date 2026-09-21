@@ -38,3 +38,31 @@ tombolTambah.addEventListener("click", function(){
     daftarTugas.appendChild(liBaru);
     inputTugas.value = "";
 });
+
+let inputAngka1 = document.getElementById("angka1");
+let inputAngka2 = document.getElementById("angka2");
+let hasilElemen = document.getElementById("hasil-kalkulator");
+
+document.getElementById("tombol-tambah-kalkulator").addEventListener("click", function() {
+    let a = Number (inputAngka1.value);
+    let b = Number (inputAngka2.value);
+    hasilElemen.textContent = "Hasil: " + (a + b);
+})
+
+document.getElementById("tombol-kurang-kalkulator").addEventListener("click", function() {
+    let a = Number (inputAngka1.value);
+    let b = Number (inputAngka2.value);
+    hasilElemen.textContent = "Hasil: " + (a - b);
+})
+
+document.getElementById("tombol-bagi-kalkulator").addEventListener("click", function() {
+    let a = Number (inputAngka1.value);
+    let b = Number (inputAngka2.value);
+    hasilElemen.textContent = "Hasil: " + (a / b);
+})
+
+document.getElementById("tombol-kali-kalkulator").addEventListener("click", function() {
+    let a = Number (inputAngka1.value);
+    let b = Number (inputAngka2.value);
+    hasilElemen.textContent = "Hasil: " + (a * b);
+})
