@@ -7,7 +7,7 @@ console.log("Nama saya ", nama);
 console.log("Umur saya", umur, "tahun");
 
 let elemenPesan = document.getElementById("pesan");
-elemenPesan.textContent = "Pesan ini sudah di ubah oleh JavaScript";
+elemenPesan.textContent = "I Wayan Ari Dharma Yasa|📍 Denpasar, Bali, Indonesia|📧 waynaiengineer@gmail.com|🔗 LinkedIn: linkedin.com/in/wayn-yasa-automation";
 elemenPesan.style.color = "red";
 
 let tombol = document.getElementById("Tombol-halo");
@@ -66,3 +66,31 @@ document.getElementById("tombol-kali-kalkulator").addEventListener("click", func
     let b = Number (inputAngka2.value);
     hasilElemen.textContent = "Hasil: " + (a * b);
 })
+
+
+let dataCuaca = {
+    lokasi: {
+        kota: "Denpasar",
+        negara: "Indonesia"
+    },
+    current: {
+        suhu: 30,
+        kelembapan: 70
+    }
+};
+ 
+console.log(dataCuaca.lokasi.kota);
+console.log(dataCuaca.current.suhu);
+
+async function cekCuaca() {
+    let url = "https://api.open-meteo.com/v1/forecast?latitude=-8.65&longitude=115.22&current_weather=true";
+    let response = await fetch(url);
+    let data = await response.json();
+    
+    console.log(data);   // lihat dulu struktur datanya di Console
+    
+    let suhu = data.current_weather.temperature;
+    document.getElementById("hasil-cuaca").textContent = "Suhu di Denpasar: " + suhu + "°C";
+}
+
+document.getElementById("tombol-cek-cuaca").addEventListener("click", cekCuaca);
